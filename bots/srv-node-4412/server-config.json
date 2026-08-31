@@ -1,0 +1,22 @@
+{
+  "server_id": "srv-node-4412",
+  "name": "Node API Backend",
+  "username": "html@gmail",
+  "type": "node",
+  "ram": "1GB",
+  "disk": "5GB",
+  "cpu_limit": 80,
+  "expiry": "2026-10-15",
+  "env": [
+    {
+      "id": "evn1",
+      "key": "PORT",
+      "value": "3000"
+    },
+    {
+      "id": "evn2",
+      "key": "NODE_ENV",
+      "value": "production"
+    }
+  ]
+}
