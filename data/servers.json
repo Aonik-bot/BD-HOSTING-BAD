@@ -1,0 +1,335 @@
+[
+  {
+    "server_id": "srv-bot-9821",
+    "name": "Telegram Bot Pro",
+    "username": "html@gmail",
+    "type": "telegram",
+    "ram": "512MB",
+    "disk": "2GB",
+    "expiry": "2026-09-30",
+    "expiryDays": 30,
+    "cpu_limit": 60,
+    "status": "running",
+    "rate_limit_exceeded": false,
+    "login_url": "https://srv-bot-9821.aonikhost.net",
+    "main_file": "main.py",
+    "requirements_file": "requirements.txt",
+    "runtime_version": "Python 3.11.8",
+    "auto_restart": true,
+    "created_at": "2026-08-30",
+    "stats": {
+      "cpu": 24,
+      "ramUsed": 148,
+      "ramTotal": 512,
+      "netIn": 34.2,
+      "netOut": 89.6,
+      "uptime": 84920,
+      "status": "running"
+    },
+    "logs": [
+      "[SYSTEM] Container initialized on cluster node-asia-bd-01",
+      "[SYSTEM] Virtual environment /opt/venv loaded (Python 3.11.8)",
+      "[INFO] Installing dependencies from requirements.txt...",
+      "[SUCCESS] All 6 dependencies resolved in 1.4s",
+      "[INFO] Executing: python main.py",
+      "=============================================",
+      "🚀 AONIK HOSTING - Cloud Execution Engine",
+      "🔥 Node: Asia-South (BD-Cluster-01)",
+      "=============================================",
+      "[2026-08-31 09:30:10] [INFO] Initializing bot services and event listeners...",
+      "[2026-08-31 09:30:11] [INFO] Bot connected to Gateway API successfully. Ping: 24ms",
+      "[2026-08-31 09:30:11] [INFO] Listening on port 8080 for webhook updates...",
+      "[2026-08-31 09:35:15] [INFO] ⚡ [Heartbeat] Service healthy. Processed 45 events. Memory stable."
+    ],
+    "gitLogs": [
+      "> Git deployment subsystem ready.",
+      "> Connected to github.com integration pipeline."
+    ],
+    "files": [
+      {
+        "id": "f1",
+        "name": "main.py",
+        "path": "main.py",
+        "is_dir": false,
+        "size": 1420,
+        "modified": "2026-08-31 09:20",
+        "content": "import os\nimport time\nimport sys\nimport logging\n\nlogging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')\n\nprint(\"=\" * 45)\nprint(\"🚀 AONIK HOSTING - Cloud Execution Engine\")\nprint(\"🔥 Node: Asia-South (BD-Cluster-01)\")\nprint(\"=\" * 45)\n\nBOT_TOKEN = os.getenv(\"BOT_TOKEN\", \"7489281928:AAHdu-AonikHostingBotToken\")\nPORT = int(os.getenv(\"PORT\", \"8080\"))\n\ndef run_service():\n    logging.info(\"Initializing bot services and event listeners...\")\n    time.sleep(1)\n    logging.info(f\"Bot connected to Gateway API successfully. Ping: 24ms\")\n    logging.info(f\"Listening on port {PORT} for webhook updates...\")\n    \n    count = 0\n    while True:\n        count += 1\n        if count % 15 == 0:\n            logging.info(f\"⚡ [Heartbeat] Service healthy. Processed {count * 3} events. Memory stable.\")\n        time.sleep(4)\n\nif __name__ == '__main__':\n    try:\n        run_service()\n    except KeyboardInterrupt:\n        logging.warning(\"Process received SIGINT. Shutting down gracefully...\")\n        sys.exit(0)\n"
+      },
+      {
+        "id": "f2",
+        "name": "config.py",
+        "path": "config.py",
+        "is_dir": false,
+        "size": 580,
+        "modified": "2026-08-30 18:10",
+        "content": "import os\n\nclass Config:\n    APP_NAME = \"Aonik-Bot-Service\"\n    VERSION = \"2.4.0\"\n    DEBUG = os.getenv(\"DEBUG\", \"False\") == \"True\"\n    REDIS_URL = os.getenv(\"REDIS_URL\", \"redis://localhost:6379/0\")\n    MAX_WORKERS = 4\n"
+      },
+      {
+        "id": "f3",
+        "name": "requirements.txt",
+        "path": "requirements.txt",
+        "is_dir": false,
+        "size": 210,
+        "modified": "2026-08-30 14:00",
+        "content": "python-telegram-bot==20.8\nrequests==2.31.0\naiohttp==3.9.3\npython-dotenv==1.0.1\npydantic==2.6.4\ncolorama==0.4.6\n"
+      },
+      {
+        "id": "f4",
+        "name": "README.md",
+        "path": "README.md",
+        "is_dir": false,
+        "size": 890,
+        "modified": "2026-08-29 11:30",
+        "content": "# AONIK Cloud Server Instance\n\nHosted via **AONIK HOSTING CLOUD PANEL**.\n\n### Quick Start:\n1. Edit `main.py` or upload your files.\n2. Ensure `requirements.txt` contains your packages.\n3. Click **START** in the console panel.\n\n### Commands:\n- `python main.py`\n- `pip install -r requirements.txt`\n"
+      },
+      {
+        "id": "f5",
+        "name": "handlers",
+        "path": "handlers",
+        "is_dir": true,
+        "size": 0,
+        "modified": "2026-08-31 08:00"
+      },
+      {
+        "id": "f6",
+        "name": "commands.py",
+        "path": "handlers/commands.py",
+        "is_dir": false,
+        "size": 1120,
+        "modified": "2026-08-31 08:15",
+        "content": "def handle_start(user_id, username):\n    return f\"👋 Welcome {username} to Aonik Hosting Bot Services! Use /help for available actions.\"\n\ndef handle_status():\n    return {\n        \"status\": \"online\",\n        \"load\": \"optimal\",\n        \"version\": \"3.1-stable\"\n    }\n"
+      },
+      {
+        "id": "f7",
+        "name": "logs",
+        "path": "logs",
+        "is_dir": true,
+        "size": 0,
+        "modified": "2026-08-31 09:00"
+      },
+      {
+        "id": "f8",
+        "name": "bot.log",
+        "path": "logs/bot.log",
+        "is_dir": false,
+        "size": 2400,
+        "modified": "2026-08-31 09:40",
+        "content": "[2026-08-31 09:35:01] [INFO] Worker pool initialized with 4 threads.\n[2026-08-31 09:36:12] [INFO] Telegram Webhook registered to https://srv-bot-9821.aonikhost.net/webhook\n[2026-08-31 09:38:45] [INFO] Received ping from cluster health monitor: 200 OK\n"
+      }
+    ],
+    "envVars": [
+      {
+        "id": "ev1",
+        "key": "BOT_TOKEN",
+        "value": "7489281928:AAHdu-AonikHostingBotToken"
+      },
+      {
+        "id": "ev2",
+        "key": "PORT",
+        "value": "8080"
+      },
+      {
+        "id": "ev3",
+        "key": "ENVIRONMENT",
+        "value": "production"
+      }
+    ]
+  },
+  {
+    "server_id": "srv-node-4412",
+    "name": "Node API Backend",
+    "username": "html@gmail",
+    "type": "node",
+    "ram": "1GB",
+    "disk": "5GB",
+    "expiry": "2026-10-15",
+    "expiryDays": 45,
+    "cpu_limit": 80,
+    "status": "stopped",
+    "rate_limit_exceeded": false,
+    "login_url": "https://srv-node-4412.aonikhost.net",
+    "main_file": "server.js",
+    "requirements_file": "package.json",
+    "runtime_version": "Node.js v20.12.0",
+    "auto_restart": true,
+    "created_at": "2026-08-28",
+    "stats": {
+      "cpu": 0,
+      "ramUsed": 0,
+      "ramTotal": 1024,
+      "netIn": 0,
+      "netOut": 0,
+      "uptime": 0,
+      "status": "stopped"
+    },
+    "logs": [
+      "[SYSTEM] Server created and ready for deployment.",
+      "[INFO] Ready. Click START to run application..."
+    ],
+    "gitLogs": [
+      "> Ready for deployment..."
+    ],
+    "files": [
+      {
+        "id": "fn1",
+        "name": "server.js",
+        "path": "server.js",
+        "is_dir": false,
+        "size": 1150,
+        "modified": "2026-08-30 20:00",
+        "content": "const express = require('express');\nconst app = express();\nconst PORT = process.env.PORT || 3000;\n\napp.use(express.json());\n\napp.get('/', (req, res) => {\n  res.json({\n    service: 'AONIK Node API Service',\n    status: 'operational',\n    node: 'Edge-SG-02',\n    timestamp: new Date().toISOString()\n  });\n});\n\napp.get('/api/health', (req, res) => {\n  res.json({ status: 'ok', uptime: process.uptime(), memory: process.memoryUsage() });\n});\n\napp.listen(PORT, () => {\n  console.log(`[AONIK HOSTING] Node.js server running on port ${PORT}`);\n});\n"
+      },
+      {
+        "id": "fn2",
+        "name": "package.json",
+        "path": "package.json",
+        "is_dir": false,
+        "size": 450,
+        "modified": "2026-08-30 19:40",
+        "content": "{\n  \"name\": \"aonik-node-app\",\n  \"version\": \"1.0.0\",\n  \"main\": \"server.js\",\n  \"scripts\": {\n    \"start\": \"node server.js\",\n    \"dev\": \"nodemon server.js\"\n  },\n  \"dependencies\": {\n    \"express\": \"^4.19.2\",\n    \"cors\": \"^2.8.5\",\n    \"dotenv\": \"^16.4.5\"\n  }\n}\n"
+      },
+      {
+        "id": "fn3",
+        "name": ".env",
+        "path": ".env",
+        "is_dir": false,
+        "size": 120,
+        "modified": "2026-08-30 19:42",
+        "content": "PORT=3000\nNODE_ENV=production\nJWT_SECRET=super_secure_aonik_key_9942\n"
+      }
+    ],
+    "envVars": [
+      {
+        "id": "evn1",
+        "key": "PORT",
+        "value": "3000"
+      },
+      {
+        "id": "evn2",
+        "key": "NODE_ENV",
+        "value": "production"
+      }
+    ]
+  },
+  {
+    "server_id": "srv-flask-1033",
+    "name": "Flask Web AI Service",
+    "username": "admin",
+    "type": "flask",
+    "ram": "2GB",
+    "disk": "5GB",
+    "expiry": "2026-11-01",
+    "expiryDays": 62,
+    "cpu_limit": 50,
+    "status": "running",
+    "rate_limit_exceeded": false,
+    "login_url": "https://srv-flask-1033.aonikhost.net",
+    "main_file": "app.py",
+    "requirements_file": "requirements.txt",
+    "runtime_version": "Python 3.12.2",
+    "auto_restart": true,
+    "created_at": "2026-08-25",
+    "stats": {
+      "cpu": 18,
+      "ramUsed": 390,
+      "ramTotal": 2048,
+      "netIn": 120.4,
+      "netOut": 340.2,
+      "uptime": 142000,
+      "status": "running"
+    },
+    "logs": [
+      "[SYSTEM] Flask production worker pool active.",
+      "[INFO] Gunicorn 21.2.0 starting with 4 sync workers",
+      "[INFO] Booting worker with pid: 4821",
+      "[INFO] WSGI app 0.0.0.0:5000 ready to handle requests."
+    ],
+    "gitLogs": [
+      "> Deployment sync active."
+    ],
+    "files": [
+      {
+        "id": "f1",
+        "name": "main.py",
+        "path": "main.py",
+        "is_dir": false,
+        "size": 1420,
+        "modified": "2026-08-31 09:20",
+        "content": "import os\nimport time\nimport sys\nimport logging\n\nlogging.basicConfig(level=logging.INFO, format='%(asctime)s [%(levelname)s] %(message)s')\n\nprint(\"=\" * 45)\nprint(\"🚀 AONIK HOSTING - Cloud Execution Engine\")\nprint(\"🔥 Node: Asia-South (BD-Cluster-01)\")\nprint(\"=\" * 45)\n\nBOT_TOKEN = os.getenv(\"BOT_TOKEN\", \"7489281928:AAHdu-AonikHostingBotToken\")\nPORT = int(os.getenv(\"PORT\", \"8080\"))\n\ndef run_service():\n    logging.info(\"Initializing bot services and event listeners...\")\n    time.sleep(1)\n    logging.info(f\"Bot connected to Gateway API successfully. Ping: 24ms\")\n    logging.info(f\"Listening on port {PORT} for webhook updates...\")\n    \n    count = 0\n    while True:\n        count += 1\n        if count % 15 == 0:\n            logging.info(f\"⚡ [Heartbeat] Service healthy. Processed {count * 3} events. Memory stable.\")\n        time.sleep(4)\n\nif __name__ == '__main__':\n    try:\n        run_service()\n    except KeyboardInterrupt:\n        logging.warning(\"Process received SIGINT. Shutting down gracefully...\")\n        sys.exit(0)\n"
+      },
+      {
+        "id": "f2",
+        "name": "config.py",
+        "path": "config.py",
+        "is_dir": false,
+        "size": 580,
+        "modified": "2026-08-30 18:10",
+        "content": "import os\n\nclass Config:\n    APP_NAME = \"Aonik-Bot-Service\"\n    VERSION = \"2.4.0\"\n    DEBUG = os.getenv(\"DEBUG\", \"False\") == \"True\"\n    REDIS_URL = os.getenv(\"REDIS_URL\", \"redis://localhost:6379/0\")\n    MAX_WORKERS = 4\n"
+      },
+      {
+        "id": "f3",
+        "name": "requirements.txt",
+        "path": "requirements.txt",
+        "is_dir": false,
+        "size": 210,
+        "modified": "2026-08-30 14:00",
+        "content": "python-telegram-bot==20.8\nrequests==2.31.0\naiohttp==3.9.3\npython-dotenv==1.0.1\npydantic==2.6.4\ncolorama==0.4.6\n"
+      },
+      {
+        "id": "f4",
+        "name": "README.md",
+        "path": "README.md",
+        "is_dir": false,
+        "size": 890,
+        "modified": "2026-08-29 11:30",
+        "content": "# AONIK Cloud Server Instance\n\nHosted via **AONIK HOSTING CLOUD PANEL**.\n\n### Quick Start:\n1. Edit `main.py` or upload your files.\n2. Ensure `requirements.txt` contains your packages.\n3. Click **START** in the console panel.\n\n### Commands:\n- `python main.py`\n- `pip install -r requirements.txt`\n"
+      },
+      {
+        "id": "f5",
+        "name": "handlers",
+        "path": "handlers",
+        "is_dir": true,
+        "size": 0,
+        "modified": "2026-08-31 08:00"
+      },
+      {
+        "id": "f6",
+        "name": "commands.py",
+        "path": "handlers/commands.py",
+        "is_dir": false,
+        "size": 1120,
+        "modified": "2026-08-31 08:15",
+        "content": "def handle_start(user_id, username):\n    return f\"👋 Welcome {username} to Aonik Hosting Bot Services! Use /help for available actions.\"\n\ndef handle_status():\n    return {\n        \"status\": \"online\",\n        \"load\": \"optimal\",\n        \"version\": \"3.1-stable\"\n    }\n"
+      },
+      {
+        "id": "f7",
+        "name": "logs",
+        "path": "logs",
+        "is_dir": true,
+        "size": 0,
+        "modified": "2026-08-31 09:00"
+      },
+      {
+        "id": "f8",
+        "name": "bot.log",
+        "path": "logs/bot.log",
+        "is_dir": false,
+        "size": 2400,
+        "modified": "2026-08-31 09:40",
+        "content": "[2026-08-31 09:35:01] [INFO] Worker pool initialized with 4 threads.\n[2026-08-31 09:36:12] [INFO] Telegram Webhook registered to https://srv-bot-9821.aonikhost.net/webhook\n[2026-08-31 09:38:45] [INFO] Received ping from cluster health monitor: 200 OK\n"
+      }
+    ],
+    "envVars": [
+      {
+        "id": "evf1",
+        "key": "FLASK_ENV",
+        "value": "production"
+      },
+      {
+        "id": "evf2",
+        "key": "SECRET_KEY",
+        "value": "aonik_flask_ai_master_key"
+      }
+    ]
+  }
+]
