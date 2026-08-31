@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Console - AONIK HOSTING</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #07090e; color: #f1f5f9; }
+    .terminal-font { font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body class="min-h-screen">
+  <header class="bg-[#0c101a] border-b border-gray-800 px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <span class="text-lg font-bold text-white">AONIK <span class="text-blue-400">HOSTING</span></span>
+    </div>
+    <a href="/logout" class="text-xs text-rose-400 bg-rose-500/10 px-3 py-1.5 rounded-lg">Sign Out</a>
+  </header>
+
+  <main class="p-6 max-w-7xl mx-auto">
+    <h2 class="text-xl font-bold text-white mb-4">My Cloud Instances ({{ servers|length }})</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for s in servers %}
+      <div class="bg-[#0e121d] border border-gray-800 p-5 rounded-2xl">
+        <div class="flex justify-between items-start mb-3">
+          <div>
+            <h3 class="font-bold text-white text-base">{{ s.name }}</h3>
+            <span class="text-xs font-mono text-gray-400">{{ s.server_id }} • {{ s.type }}</span>
+          </div>
+          <span class="text-xs px-2.5 py-1 rounded-full font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase">{{ s.status }}</span>
+        </div>
+        <div class="grid grid-cols-3 gap-2 text-xs font-mono text-gray-300 bg-[#080a11] p-3 rounded-xl mb-3">
+          <div>RAM: <span class="text-blue-400">{{ s.ram }}</span></div>
+          <div>CPU Limit: <span class="text-blue-400">{{ s.cpu_limit }}%</span></div>
+          <div>Disk: <span class="text-blue-400">{{ s.disk }}</span></div>
+        </div>
+        <a href="{{ s.login_url }}" target="_blank" class="text-xs text-blue-400 hover:underline flex items-center gap-1 font-mono">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> {{ s.login_url }}
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+</body>
+</html>

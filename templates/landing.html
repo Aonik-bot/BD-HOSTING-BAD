@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AONIK HOSTING - Cloud Bot & Server Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Fira+Code:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #07090e; color: #f1f5f9; }
+    .code-font { font-family: 'Fira Code', monospace; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between">
+  <!-- Navigation Header -->
+  <header class="border-b border-blue-900/40 bg-[#0c101a]/80 backdrop-blur-md px-6 py-4 flex items-center justify-between sticky top-0 z-30">
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center text-white shadow-lg shadow-blue-500/25">
+        <i class="fa-solid fa-cloud text-lg"></i>
+      </div>
+      <span class="text-xl font-extrabold tracking-wide text-white">AONIK <span class="text-blue-400">HOSTING</span></span>
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="/login" class="bg-blue-600 hover:bg-blue-500 text-white font-bold px-5 py-2 rounded-xl text-sm transition shadow-lg shadow-blue-600/30">
+        <i class="fa-solid fa-right-to-bracket mr-2"></i> Client Area / Login
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="container mx-auto px-6 py-16 flex-1 flex flex-col items-center justify-center text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
+      <i class="fa-solid fa-bolt"></i> Ultra Low-Latency Node Architecture v3.2
+    </div>
+    <h1 class="text-4xl md:text-6xl font-black text-white max-w-4xl leading-tight">
+      Next-Generation <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400">Cloud Bot Hosting</span> & Web Engine
+    </h1>
+    <p class="text-gray-400 text-base md:text-lg max-w-2xl mt-4 mb-8">
+      Deploy Telegram Bots, Discord Bots, Python APIs, and Node.js servers in seconds with automated restart, live console, and CPU rate-limiting controls.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="/login" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-3.5 rounded-xl font-bold text-base transition shadow-xl shadow-blue-600/30 flex items-center gap-2">
+        <i class="fa-solid fa-rocket"></i> Launch Free Console
+      </a>
+      <a href="https://t.me/onikislamhhd" target="_blank" class="bg-[#121624] hover:bg-[#1a2035] border border-gray-800 text-gray-200 px-6 py-3.5 rounded-xl font-bold text-base transition flex items-center gap-2">
+        <i class="fa-brands fa-telegram text-blue-400"></i> Telegram Support
+      </a>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mt-16 text-left">
+      <div class="bg-[#0e121d] border border-gray-800/80 p-6 rounded-2xl">
+        <div class="w-10 h-10 bg-blue-500/10 border border-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">CPU Rate Limit Engine</h3>
+        <p class="text-sm text-gray-400">Granular throttle controls to prevent container spikes and keep processes balanced.</p>
+      </div>
+
+      <div class="bg-[#0e121d] border border-gray-800/80 p-6 rounded-2xl">
+        <div class="w-10 h-10 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-solid fa-terminal"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">Live WebSocket Terminal</h3>
+        <p class="text-sm text-gray-400">Instant output streaming, command input, package installer, and log analytics.</p>
+      </div>
+
+      <div class="bg-[#0e121d] border border-gray-800/80 p-6 rounded-2xl">
+        <div class="w-10 h-10 bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 rounded-xl flex items-center justify-center mb-4">
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-1">1-Click Git Deployments</h3>
+        <p class="text-sm text-gray-400">Automatic build pipeline with support for requirements.txt, virtualenv, and environment variables.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-900 bg-[#07090e] px-6 py-6 text-center text-xs text-gray-500">
+    © 2026 AONIK HOSTING Cloud Platform. Built with Pride by @onikislamhhd. All rights reserved.
+  </footer>
+</body>
+</html>
