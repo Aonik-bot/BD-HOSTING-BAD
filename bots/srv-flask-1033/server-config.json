@@ -1,0 +1,22 @@
+{
+  "server_id": "srv-flask-1033",
+  "name": "Flask Web AI Service",
+  "username": "admin",
+  "type": "flask",
+  "ram": "2GB",
+  "disk": "5GB",
+  "cpu_limit": 50,
+  "expiry": "2026-11-01",
+  "env": [
+    {
+      "id": "evf1",
+      "key": "FLASK_ENV",
+      "value": "production"
+    },
+    {
+      "id": "evf2",
+      "key": "SECRET_KEY",
+      "value": "aonik_flask_ai_master_key"
+    }
+  ]
+}
